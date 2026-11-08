@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pink Memory Match 🐱💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- FLOATING BACKGROUND -->
+    <div class="background-decor">
+        <span>💗</span>
+        <span>✨</span>
+        <span>🎀</span>
+        <span>⭐</span>
+        <span>💖</span>
+        <span>🌸</span>
+    </div>
+
+
+    <!-- =========================
+       HOME SCREEN
+  ========================== -->
+
+    <section id="homeScreen" class="screen">
+
+        <div class="home-card">
+
+            <div class="mascot">🐱</div>
+
+            <p class="mini-title">WELCOME TO</p>
+
+            <h1>MEMORY MATCH</h1>
+
+            <p class="subtitle">
+                Match the cards, protect your hearts, and complete every level! 💗
+            </p>
+
+            <div class="feature-preview">
+
+                <div>🃏<span>Match</span></div>
+                <div>❤️<span>Lives</span></div>
+                <div>🔥<span>Combo</span></div>
+                <div>🏆<span>Win</span></div>
+
+            </div>
+
+            <button id="playBtn" class="main-btn">
+                🎮 PLAY NOW
+            </button>
+
+            <p class="progress-text">
+                💾 Your progress is saved automatically!
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+       LEVEL SELECT
+  ========================== -->
+
+    <section id="levelScreen" class="screen hidden">
+
+        <div class="level-card">
+
+            <button id="backHomeBtn" class="back-btn">
+                ← BACK
+            </button>
+
+            <div class="level-mascot">🐱🎀</div>
+
+            <h2>CHOOSE YOUR LEVEL</h2>
+
+            <p class="subtitle">
+                Are you ready for the challenge?
+            </p>
+
+
+            <div class="level-grid">
+
+
+                <!-- EASY -->
+                <button class="level-btn easy" data-level="easy">
+
+                    <div class="level-top">
+                        🟢
+                        <span>EASY</span>
+                    </div>
+
+                    <p>4 Pairs • 8 Cards</p>
+
+                    <div class="level-lives">
+                        ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+                    </div>
+
+                    <small>Perfect for warming up!</small>
+
+                </button>
+
+
+                <!-- MEDIUM -->
+                <button class="level-btn medium" data-level="medium">
+
+                    <div class="level-top">
+                        🟡
+                        <span>MEDIUM</span>
+                    </div>
+
+                    <p>8 Pairs • 16 Cards</p>
+
+                    <div class="level-lives">
+                        ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+                    </div>
+
+                    <small>A bigger challenge!</small>
+
+                </button>
+
+
+                <!-- HARD -->
+                <button class="level-btn hard" data-level="hard">
+
+                    <div class="level-top">
+                        🔴
+                        <span>HARD</span>
+                    </div>
+
+                    <p>15 Pairs • 30 Cards</p>
+
+                    <div class="level-lives">
+                        ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+                    </div>
+
+                    <small>Only for memory masters!</small>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+       GAME SCREEN
+  ========================== -->
+
+    <section id="gameScreen" class="screen hidden">
+
+        <div class="game-wrapper">
+
+            <!-- GAME HUD -->
+            <div class="game-hud">
+
+                <button id="quitBtn" class="quit-btn">
+                    🏠 QUIT
+                </button>
+
+                <div class="hud-item">
+
+                    <span class="hud-label">LIVES</span>
+
+                    <div id="livesDisplay">
+                        ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+                    </div>
+
+                </div>
+
+
+                <div class="hud-item">
+
+                    <span class="hud-label">SCORE</span>
+
+                    <div id="scoreDisplay">
+                        ⭐ 0
+                    </div>
+
+                </div>
+
+
+                <div class="hud-item">
+
+                    <span class="hud-label">COMBO</span>
+
+                    <div id="comboDisplay">
+                        🔥 x0
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GAME TITLE -->
+            <div class="game-title">
+
+                <div id="currentLevel">
+                    EASY MODE
+                </div>
+
+                <p id="gameMessage">
+                    Find all the matching pairs! 💗
+                </p>
+
+            </div>
+
+
+            <!-- MEMORY BOARD -->
+            <div id="memoryBoard" class="memory-board"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+       RESULT SCREEN
+  ========================== -->
+
+    <section id="resultScreen" class="screen hidden">
+
+        <div class="result-card">
+
+            <div id="resultIcon" class="result-icon">
+                🏆
+            </div>
+
+            <h2 id="resultTitle">
+                LEVEL COMPLETE!
+            </h2>
+
+            <div id="starsDisplay" class="stars">
+                ⭐⭐⭐
+            </div>
+
+            <p id="resultMessage">
+                Amazing job!
+            </p>
+
+
+            <div class="result-stats">
+
+                <div class="stat-box">
+
+                    <span>⭐ SCORE</span>
+
+                    <strong id="finalScore">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <span>🏆 BEST SCORE</span>
+
+                    <strong id="bestScore">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button id="playAgainBtn" class="main-btn">
+                    🔄 PLAY AGAIN
+                </button>
+
+                <button id="menuBtn" class="secondary-btn">
+                    🏠 GAME MENU
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONFETTI -->
+    <div id="confettiContainer"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
